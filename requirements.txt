@@ -5,3 +5,4 @@ sqlalchemy - for handling database interactions (you can also use another ORM li
 databases - asynchronous database support for SQLAlchemy.
 asyncpg - if you're using PostgreSQL as the database.
 passlib - for password hashing (if the system requires user authentication)
+install pytest and httpx
