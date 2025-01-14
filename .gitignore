@@ -1,0 +1,5 @@
+fastapi-env
+__pycache__
+Registration.db
+db_config.py
+.env

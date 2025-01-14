@@ -1,0 +1,7 @@
+fastapi - for building the web API.
+uvicorn - for serving the FastAPI application.
+pydantic - for data validation and serialization.
+sqlalchemy - for handling database interactions (you can also use another ORM like Tortoise-ORM if needed).
+databases - asynchronous database support for SQLAlchemy.
+asyncpg - if you're using PostgreSQL as the database.
+passlib - for password hashing (if the system requires user authentication)
