@@ -43,7 +43,7 @@ def verify_token(token: str):
 
 oauth2_scheme=OAuth2PasswordBearer(tokenUrl='login')
 
-async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
+def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -63,7 +63,7 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
 admin_router = APIRouter(prefix="/admin", tags=["Admin"])
 
 @admin_router.post("/add_course", status_code=status.HTTP_201_CREATED)
-async def add_course(course: schemas.CourseCreate, db: Session = Depends(db_config.get_db), user_data: dict= Depends(verify_token)):
+def add_course(course: schemas.CourseCreate, db: Session = Depends(db_config.get_db), user_data: dict= Depends(verify_token)):
 
     if user_data.get("role") != "Admin":
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Not an admin")

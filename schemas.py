@@ -43,6 +43,6 @@ class TokenData(BaseModel):
 class login(BaseModel):
       email:str
       password:str
-      role:str
+      
       
     
